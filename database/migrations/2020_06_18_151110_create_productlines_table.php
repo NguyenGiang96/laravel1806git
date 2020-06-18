@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOrderdetialsTable extends Migration
+class CreateProductlinesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateOrderdetialsTable extends Migration
      */
     public function up()
     {
-        Schema::create('orderdetials', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('product_code');
-            $table->integer('quantity_ordered');
-            $table->integer('price_each');
-            $table->integer('order_linenumber');
+        Schema::create('productlines', function (Blueprint $table) {
+            $table->increments('productLine');
+            $table->string('textDescription');
+            $table->string('nameDescription');
+            $table->string('image');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateOrderdetialsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orderdetials');
+        Schema::dropIfExists('productlines');
     }
 }

@@ -14,15 +14,15 @@ class CreateOfficesTable extends Migration
     public function up()
     {
         Schema::create('offices', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('city',50);
-            $table->string('phone',20);
-            $table->string('address_line1',100);
-            $table->string('address_line2',100);
-            $table->string('state',50);
-            $table->string('country',20);
+            $table->increments('office_code');
+            $table->string('city');
+            $table->integer('phone');
+            $table->string('address_line1');
+            $table->string('address_line2');
+            $table->string('state');
+            $table->string('country');
             $table->integer('postal_code');
-            $table->string('territory',50);
+            $table->string('territory');
             $table->timestamps();
         });
     }
